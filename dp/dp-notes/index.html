@@ -491,15 +491,15 @@
 </li>
 <li>
 <p><strong>题解：</strong></p>
-<p>这道题是经典的动态规划问题了，虽然我的代码还是有很多的冗余，但是基本上就是这个思想。简单来说要求最大子序和，分解为子问题就是求以<code>nums</code>数组中每一个元素为结尾的最大子序和是什么。定义$$f(i)$$表示<code>nums</code>第$i$项结尾的最大子序列和是多少，而这一子问题表示为：<br>
-$$<br>
-f(i)=max \left{f(i−1)+nums[i],nums[i]\right}<br>
-$$<br>
-也就是说$f(i)$要么是先前最大子序列$f(i-1)$和加上第$i$项元素，或者由于$f(i-1)$已经小于0，因此<code>nums[i]</code>项反而相较之下更大，取两者之间最大的一个值。</p>
+<p>这道题是经典的动态规划问题了，虽然我的代码还是有很多的冗余，但是基本上就是这个思想。简单来说要求最大子序和，分解为子问题就是求以<code>nums</code>数组中每一个元素为结尾的最大子序和是什么。定义$f(i)$表示<code>nums</code>第$i$项结尾的最大子序列和是多少，而这一子问题表示为：</p>
+<p>$$<br>
+f(i)=max\lbrace f(i−1)+nums[i],nums[i] \rbrace<br>
+$$</p>
+<p>也就是说$f(i)$要么是先前最大子序列$f(i-1)$和加上第$i$项元素，或者由于$f(i-1)$已经小于0，因此<code>nums[i]</code>项反而相较之下更大，取两者之间最大的一个值。</p>
 <p>如何理解，不加上这一项的前$f(i-1)$项是我们最终要求的最大子序列和呢？问题在于我们定义的$f(i)$一定包括第$i$项，最后在求整个数组的最大子序列和的时候需要便利$f(i)$数组，找到最大值，也可以和我上述代码一样用<code>pre</code>来记录上一轮的$f(i-1)$，这样就不用再做数组了，空间复杂度可以降到$O(1)$。</p>
 </li>
 </ul>
-<h3 id="2-爬楼梯问题">2 爬楼梯问题</h3>
+<h3 id="2-爬楼梯问题（简单）">2 爬楼梯问题（简单）</h3>
 <ul>
 <li>
 <p><strong>题目：</strong></p>
@@ -517,7 +517,7 @@ $$<br>
 <p><strong>题解：</strong></p>
 <p>这道问题也是一道典型的动态规划，感觉思考这一类问题要反向思考，即要跳到最后一级台阶的前一步要跳到哪个台阶。设要跳到第$i$个台阶，那么一共就只有两种可能，要么从第$i-1$级台阶花费<code>cost[i-1]</code>元跳过来，要么从$i-2$级台阶花费<code>cost[i-2]</code>元跳过来。也就是说问题可以进行转换，设$dp[i]$为跳到第$i$级台阶需要花费的钱，共n级台阶，起跳为下标为0或下标为1处，则可以列出公式：<br>
 $$<br>
-dp[i]=min\left{dp[i-1]+cost[i-1],dp[i-2]+cost[i-2]\right}<br>
+dp[i]=min(dp[i-1]+cost[i-1],dp[i-2]+cost[i-2])<br>
 $$</p>
 </li>
 </ul>
@@ -533,7 +533,7 @@ $$</p>
           
           
           <li class="next">
-            <a href="/en/Hexo-Theme-LiveMyLife/" data-toggle="tooltip" data-placement="top" title="Hexo-Theme-LiveMyLife">Next Post &rarr;</a>
+            <a href="/dragon-book/编译原理龙书学习笔记/" data-toggle="tooltip" data-placement="top" title="编译原理龙书学习笔记">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -669,7 +669,7 @@ $$</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">算法学习：动态规划</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%A5%E9%97%A8%EF%BC%89"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">1 最大子序和问题（入门）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-%E7%88%AC%E6%A5%BC%E6%A2%AF%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">2 爬楼梯问题</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">算法学习：动态规划</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%A5%E9%97%A8%EF%BC%89"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">1 最大子序和问题（入门）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-%E7%88%AC%E6%A5%BC%E6%A2%AF%E9%97%AE%E9%A2%98%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">2 爬楼梯问题（简单）</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
