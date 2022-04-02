@@ -476,39 +476,50 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="算法学习：动态规划"><a href="#算法学习：动态规划" class="headerlink" title="算法学习：动态规划"></a>算法学习：动态规划</h1><h3 id="1-最大子序和问题（入门）"><a href="#1-最大子序和问题（入门）" class="headerlink" title="1 最大子序和问题（入门）"></a>1 最大子序和问题（入门）</h3><ul>
-<li><p><strong>题目：</strong></p>
+        <h1>算法学习：动态规划</h1>
+<h3 id="1-最大子序和问题（简单）">1 最大子序和问题（简单）</h3>
+<ul>
+<li>
+<p><strong>题目：</strong></p>
 <blockquote>
 <p>给你一个整数数组 <code>nums</code> ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
 </blockquote>
 </li>
-<li><p><strong>解决代码：</strong></p>
+<li>
+<p><strong>解决代码：</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSubArray</span>(<span class="params">self, nums</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums)==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>]</span><br><span class="line">        maxu = nums[<span class="number">0</span>]</span><br><span class="line">        pre = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums[<span class="number">1</span>:]:</span><br><span class="line">            <span class="comment"># print(num)</span></span><br><span class="line">            pre = <span class="built_in">max</span>(num+pre,num)</span><br><span class="line">            maxu = <span class="built_in">max</span>(pre,maxu)</span><br><span class="line">        <span class="keyword">return</span> maxu</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
-<li><p><strong>题解：</strong></p>
+<li>
+<p><strong>题解：</strong></p>
 <p>这道题是经典的动态规划问题了，虽然我的代码还是有很多的冗余，但是基本上就是这个思想。简单来说要求最大子序和，分解为子问题就是求以<code>nums</code>数组中每一个元素为结尾的最大子序和是什么。定义$f(i)$表示<code>nums</code>第$i$项结尾的最大子序列和是多少，而这一子问题表示为：</p>
-<script type="math/tex; mode=display">
-f(i)=max\lbrace f(i−1)+nums[i],nums[i] \rbrace</script><p>也就是说$f(i)$要么是先前最大子序列$f(i-1)$和加上第$i$项元素，或者由于$f(i-1)$已经小于0，因此<code>nums[i]</code>项反而相较之下更大，取两者之间最大的一个值。</p>
+<p>$$<br>
+f(i)=max\lbrace f(i−1)+nums[i],nums[i] \rbrace<br>
+$$</p>
+<p>也就是说$f(i)$要么是先前最大子序列$f(i-1)$和加上第$i$项元素，或者由于$f(i-1)$已经小于0，因此<code>nums[i]</code>项反而相较之下更大，取两者之间最大的一个值。</p>
 <p>如何理解，不加上这一项的前$f(i-1)$项是我们最终要求的最大子序列和呢？问题在于我们定义的$f(i)$一定包括第$i$项，最后在求整个数组的最大子序列和的时候需要便利$f(i)$数组，找到最大值，也可以和我上述代码一样用<code>pre</code>来记录上一轮的$f(i-1)$，这样就不用再做数组了，空间复杂度可以降到$O(1)$。</p>
 </li>
 </ul>
-<h3 id="2-爬楼梯问题（简单）"><a href="#2-爬楼梯问题（简单）" class="headerlink" title="2 爬楼梯问题（简单）"></a>2 爬楼梯问题（简单）</h3><ul>
-<li><p><strong>题目：</strong></p>
+<h3 id="2-爬楼梯问题（简单）">2 爬楼梯问题（简单）</h3>
+<ul>
+<li>
+<p><strong>题目：</strong></p>
 <blockquote>
 <p>给你一个整数数组<code>cost</code>，其中<code>cost[i]</code>是从楼梯第<code>i</code>个台阶向上爬需要支付的费用。一旦你支付此费用，即可选择向上爬一个或者两个台阶。</p>
 <p>你可以选择从下标为 0 或下标为 1 的台阶开始爬楼梯。</p>
 <p>请你计算并返回达到楼梯顶部的最低花费。</p>
 </blockquote>
 </li>
-<li><p><strong>解决代码：</strong></p>
+<li>
+<p><strong>解决代码：</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minCostClimbingStairs</span>(<span class="params">self, cost</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type cost: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        n=<span class="built_in">len</span>(cost)</span><br><span class="line">        dp=[<span class="number">0</span>]*(n+<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,n+<span class="number">1</span>):  <span class="comment">#range左包右不包</span></span><br><span class="line">            dp[i]=<span class="built_in">min</span>(dp[i-<span class="number">2</span>]+cost[i-<span class="number">2</span>],dp[i-<span class="number">1</span>]+cost[i-<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">return</span> dp[n]</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>题解：</strong></p>
-<p>这道问题也是一道典型的动态规划，感觉思考这一类问题要反向思考，即要跳到最后一级台阶的前一步要跳到哪个台阶。设要跳到第$i$个台阶，那么一共就只有两种可能，要么从第$i-1$级台阶花费<code>cost[i-1]</code>元跳过来，要么从$i-2$级台阶花费<code>cost[i-2]</code>元跳过来。也就是说问题可以进行转换，设$dp[i]$为跳到第$i$级台阶需要花费的钱，共n级台阶，起跳为下标为0或下标为1处，则可以列出公式：</p>
-<script type="math/tex; mode=display">
-dp[i]=min(dp[i-1]+cost[i-1],dp[i-2]+cost[i-2])</script></li>
+<li>
+<p><strong>题解：</strong></p>
+<p>这道问题也是一道典型的动态规划，感觉思考这一类问题要反向思考，即要跳到最后一级台阶的前一步要跳到哪个台阶。设要跳到第$i$个台阶，那么一共就只有两种可能，要么从第$i-1$级台阶花费<code>cost[i-1]</code>元跳过来，要么从$i-2$级台阶花费<code>cost[i-2]</code>元跳过来。也就是说问题可以进行转换，设$dp[i]$为跳到第$i$级台阶需要花费的钱，共n级台阶，起跳为下标为0或下标为1处，则可以列出公式：<br>
+$$<br>
+dp[i]=min(dp[i-1]+cost[i-1],dp[i-2]+cost[i-2])<br>
+$$</p>
+</li>
 </ul>
 
 
@@ -658,7 +669,7 @@ dp[i]=min(dp[i-1]+cost[i-1],dp[i-2]+cost[i-2])</script></li>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">算法学习：动态规划</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%A5%E9%97%A8%EF%BC%89"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">1 最大子序和问题（入门）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-%E7%88%AC%E6%A5%BC%E6%A2%AF%E9%97%AE%E9%A2%98%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">2 爬楼梯问题（简单）</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">算法学习：动态规划</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C%E9%97%AE%E9%A2%98%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">1 最大子序和问题（简单）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-%E7%88%AC%E6%A5%BC%E6%A2%AF%E9%97%AE%E9%A2%98%EF%BC%88%E7%AE%80%E5%8D%95%EF%BC%89"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">2 爬楼梯问题（简单）</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
