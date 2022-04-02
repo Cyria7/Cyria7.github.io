@@ -495,7 +495,7 @@
 <p>符号表和中间表示形式一起传送给综合部分。</p>
 <h5 id="·-综合部分-synthesis">· 综合部分(synthesis)</h5>
 <p>综合部分根据中间表示和符号表中的信息来构造用户期待的目标程序。</p>
-<img src="D:\MyBlog\source\_posts\dragon-book\编译原理龙书学习笔记\bianyiqi.png" alt="编译器各个步骤" style="zoom: 80%;" />
+<p><img src="bianyiqi.png" alt="编译器"></p>
 <h4 id="1-2-1-词法分析">1.2.1 词法分析</h4>
 <p>词法分析器读入组成源程序的字符流，并将他们组织成为有意义的**词素(lexeme)<strong>的序列。对于每个词素，此法分析器产生如下形式的</strong>词法单元(token)**作为输出：&lt;token-name, attribute-value&gt; 。这个词法单元被传送给下一个步骤，即语法分析（龙书P3），其中第一个分量是由语法分析步骤使用的抽象符号，第二个分量指向符号表中关于这个词法单元的条目。</p>
 <h4 id="1-2-2-语法分析">1.2.2 语法分析</h4>
