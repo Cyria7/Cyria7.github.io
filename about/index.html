@@ -10,18 +10,18 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/archives/"/>
+    <link rel="canonical" href="http://example.com/about/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Cyria7&#39;s Space Station">
+    <meta property="og:title" content="about">
     <meta property="og:description" content="Hexo Theme Redefine">
-    <meta property="og:url" content="http://example.comarchives/index.html">
+    <meta property="og:url" content="http://example.comabout/index.html">
     
     <meta property="og:site_name" content="Cyria7&#39;s Planet">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cyria7&#39;s Space Station">
+    <meta name="twitter:title" content="about">
     <meta name="twitter:description" content="Hexo Theme Redefine">
     <meta name="twitter:image" content="/images/star-planet.png">
     <!--- Icon Part-->
@@ -32,7 +32,7 @@
     
     <title>
         
-            Archive -
+            About -
         
         Cyria7&#39;s Planet
     </title>
@@ -133,7 +133,7 @@
                         
                             <li class="menu-item">
                                 <!-- Menu -->
-                                <a class="active" 
+                                <a class="" 
                                     href="/archives"  >
                                     
                                         
@@ -149,7 +149,7 @@
                         
                             <li class="menu-item">
                                 <!-- Menu -->
-                                <a class="" 
+                                <a class="active" 
                                     href="/about"  >
                                     
                                         
@@ -242,7 +242,7 @@
             
                 
                     <li class="drawer-menu-item flex-center">
-                        <a class="active" 
+                        <a class="" 
                         href="/archives"  >
                              
                                 
@@ -257,7 +257,7 @@
             
                 
                     <li class="drawer-menu-item flex-center">
-                        <a class="" 
+                        <a class="active" 
                         href="/about"  >
                              
                                 
@@ -320,52 +320,62 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="archive-container ">
+    <div class="page-template-container">
         
-<div class="archive-list-container">
+        
+        <div class="page-template-content markdown-body">
+            
+                <h1>about</h1>
+            
+        </div>
+        <div class="page-template-comments">
+            
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2023</span>
-                <span class="archive-year-post-count">[2]</span>
-            </div>
-            <ul class="article-list">
-              
-              <li class="article-item" date-is='03-14'>
-                <a href="/2023/03/14/neo4j/neo4j/">
-                  <span class="article-title">Neo4j从入门到入土</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='03-14'>
-                <a href="/2023/03/14/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
-                  <span class="article-title">知识图谱学习记录</span>
-                </a>
-              </li>
-              
-            </ul>
-        </section>
-    
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2022</span>
-                <span class="archive-year-post-count">[1]</span>
-            </div>
-            <ul class="article-list">
-              
-              <li class="article-item" date-is='03-31'>
-                <a href="/2022/03/31/dp-notes/dp-notes/">
-                  <span class="article-title">动态规划问题</span>
-                </a>
-              </li>
-              
-            </ul>
-        </section>
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-pjax>
+        import { init } from 'https://evan.beee.top/js/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://cyria7-site-comments-gu7bnxyit-cyria7.vercel.app/',
+                lang: 'en',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
     
 </div>
 
+            
+        </div>
     </div>
 </div>
+
 
                 
 
