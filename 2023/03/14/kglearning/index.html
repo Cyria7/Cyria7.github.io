@@ -10,14 +10,14 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/03/14/知识图谱学习记录/"/>
+    <link rel="canonical" href="http://example.com/2023/03/14/kglearning/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
     <meta property="og:title" content="知识图谱学习记录">
     <meta property="og:description" content="Hexo Theme Redefine">
-    <meta property="og:url" content="http://example.com2023/03/14/知识图谱学习记录/">
+    <meta property="og:url" content="http://example.com2023/03/14/kglearning/">
     
     <meta property="og:site_name" content="Cyria7&#39;s Planet">
     <meta name="twitter:card" content="summary_large_image">
@@ -324,9 +324,10 @@
         <div class="article-content-container">
 
             
-            
+                      
                 <div class="article-title">
-                    <h1 class="article-title-regular">知识图谱学习记录</h1>
+                    <img src="https://www.2008php.com/2020_Website_appreciate/2020-02-07/20200207125334ZETIf.jpg" alt="知识图谱学习记录" />
+                    <h1 class="article-title-cover">知识图谱学习记录</h1>
                 </div>
             
                 
@@ -355,12 +356,23 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-03-14 20:22:15</span>
-            <span class="mobile">2023-03-14 20:22</span>
+            <span class="pc">2023-03-23 01:44:12</span>
+            <span class="mobile">2023-03-23 01:44</span>
             <span class="hover-info">Updated</span>
         </span>
     
 
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/">知识图谱</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
     
         <span class="article-tags article-meta-item">
@@ -369,6 +381,10 @@
                 
                     <li>
                         <a href="/tags/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/">知识图谱</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%A4%9A%E6%A8%A1%E6%80%81%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/">多模态知识图谱</a>&nbsp;
                     </li>
                 
             </ul>
@@ -391,7 +407,19 @@
             
 
             <div class="article-content markdown-body">
-                
+                <h2 id="1-知识图谱简述"><a href="#1-知识图谱简述" class="headerlink" title="1 知识图谱简述"></a>1 知识图谱简述</h2><p>知识图谱，即一种特殊的语义网络，它利用<strong>实体</strong>、<strong>关系</strong>、<strong>属性</strong>这些基本单位，以符号的形式描述了物理世界中不同的概念和概念之间的相互关系。知识图谱的相关技术已经在<strong>搜索引擎、智能问答、语言理 解、推荐计算、大数据决策分析</strong>等众多领域得到广泛的实际应用。近年来，随着自然语言处理、深度学习、图数据处理等众多领域的飞速发展，知识图谱在自动化知识获取、知识表示学习与推理、大规模图挖掘与分析等领域又取得了很多新进展。知识图谱已经成为实现认知层面的 人工智能不可或缺的重要技术之一。</p>
+<h2 id="2-知识存储形式"><a href="#2-知识存储形式" class="headerlink" title="2 知识存储形式"></a>2 知识存储形式</h2><p>知识图谱数据存储的核心思想是如何存储实体与实体之间产生的联系，对于关系型数据库，常见的有三元组（SPO）、水平表、属性表等，但关系型数据库在大规模遍历关系数据（较深关系）时不能提供高效的性能，故采用原生图数据库Neo4j来存储知识图谱的实体、实体间的关系以及属性。基于图数据库构建的知识图谱在博客<a class="link" target="_blank" rel="noopener" href="https://cyria7.github.io/2023/03/14/neo4j/">《Neo4j+陶瓷多模态知识图谱构建》 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>中会进行较为详细的介绍。</p>
+<p><img src="/2023/03/14/kglearning/spo.jpg" alt="三元组表"></p>
+<h2 id="3-知识图谱嵌入（Knowledge-Graph-Embedding）"><a href="#3-知识图谱嵌入（Knowledge-Graph-Embedding）" class="headerlink" title="3 知识图谱嵌入（Knowledge Graph Embedding）"></a>3 知识图谱嵌入（Knowledge Graph Embedding）</h2><h3 id="3-1-概念与优点"><a href="#3-1-概念与优点" class="headerlink" title="3.1 概念与优点"></a>3.1 概念与优点</h3><p>在词向量的启发下，研究者考虑如何将知识图谱中的实体和关系映射到连续的向量空间，并包含一些语义层面的信息，可以使得在下游任务中更加方便地操作知识图谱，例如问答任务、关系抽取等。对于计算机来说，连续向量的表达可以蕴涵更多的语义，更容易被计算机理解和操作。<strong>将知识图谱中包括实体和关系的内容映射到连续向量空间方法的研究领域称为知识图谱嵌入。</strong></p>
+<p><img src="/2023/03/14/kglearning/vec.jpg" alt="知识图谱嵌入"></p>
+<p>使用向量的表达方式可以提高应用时的计算效率，当把知识图谱的内容映射到向量空间时，相应的算法可以<strong>使用数值计算</strong>，所以计算的效率也会同时提高。</p>
+<p>增加了下游应用设计的多样性。用向量表示后，知识图谱将更加<strong>适用于当前流行的机器学习算法</strong>，例如神经网络等方法。因为下游应用输入的并不再是符号，所以可以考虑的方法也不会仅局限于图算法。</p>
+<h3 id="3-2-知识图谱的嵌入方法"><a href="#3-2-知识图谱的嵌入方法" class="headerlink" title="3.2 知识图谱的嵌入方法"></a>3.2 知识图谱的嵌入方法</h3><h4 id="3-2-1-距离转移模型（以TranE为例）"><a href="#3-2-1-距离转移模型（以TranE为例）" class="headerlink" title="3.2.1 距离转移模型（以TranE为例）"></a>3.2.1 距离转移模型（以TranE为例）</h4><img src="https://pic1.zhimg.com/80/v2-8afda52458e5b1c6bc6ee9a695a2e300_1440w.webp" alt="transEvec" style="zoom:50%;">
+
+<p>转移距离模型（Translational Distance Model）的主要思想是将衡量向量化后的知识图谱中三元组的合理性问题，转化成衡量头实体和尾实体的距离问题。TransE 模型的基本思想就是把 relation 看做是 head 到 tail 的翻译，认为一个正确的知识三元组应该满足$\vec h+\vec r \approx \vec t$，而错误的不满足。</p>
+<p>定义距离公式如下：<br>$$<br>d(\boldsymbol{h}, \boldsymbol{l}, \boldsymbol{t})&#x3D;|\boldsymbol{h}+\boldsymbol{l}-\boldsymbol{t}|<em>{2}^{2}<br>$$<br>定义损失函数如下：<br>$$<br>\mathcal{L}&#x3D;\sum</em>{(h, l, t) \in S} \sum_{\left(h^{\prime}, l^{\prime}, t^{\prime}\right) \in S^{\prime}(h, l, t)}\left[\gamma+d(\boldsymbol{h}+\boldsymbol{l}, \boldsymbol{t})-d\left(\boldsymbol{h}^{\prime}+\boldsymbol{l}, \boldsymbol{t}^{\prime}\right)\right]_{+}<br>$$<br>上式表示被破坏的三元组，其中 head 实体或者 tail 实体被随机实体替换作为对照组。 训练模型时，期望原三元组损失函数更小，被破坏的三元组损失函数更大。</p>
+<p><img src="/2023/03/14/kglearning/fakecodete.jpg" alt="transE伪代码"></p>
+
             </div>
 
             
@@ -402,7 +430,7 @@
         <li>Post author：Cyria7</li>
         <li>Create time：2023-03-14 20:15:02</li>
         <li>
-            Post link：https://cyria7.github.io/2023/03/14/知识图谱学习记录/
+            Post link：https://cyria7.github.io/2023/03/14/kglearning/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -418,6 +446,10 @@
                     
                         <li class="tag-item">
                             <a href="/tags/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/">#知识图谱</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E5%A4%9A%E6%A8%A1%E6%80%81%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/">#多模态知识图谱</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -437,7 +469,7 @@
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </span>
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">Neo4j从入门到入土</span>
+                                    <span class="post-nav-title-item">Neo4j+陶瓷多模态知识图谱构建（更新中）</span>
                                     <span class="post-nav-item">Prev posts</span>
                                 </span>
                             </a>
@@ -516,7 +548,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">知识图谱学习记录</div>
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%AE%80%E8%BF%B0"><span class="nav-text">1 知识图谱简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%9F%A5%E8%AF%86%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F"><span class="nav-text">2 知识存储形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%B5%8C%E5%85%A5%EF%BC%88Knowledge-Graph-Embedding%EF%BC%89"><span class="nav-text">3 知识图谱嵌入（Knowledge Graph Embedding）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BC%98%E7%82%B9"><span class="nav-text">3.1 概念与优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%B5%8C%E5%85%A5%E6%96%B9%E6%B3%95"><span class="nav-text">3.2 知识图谱的嵌入方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-%E8%B7%9D%E7%A6%BB%E8%BD%AC%E7%A7%BB%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BB%A5TranE%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="nav-text">3.2.1 距离转移模型（以TranE为例）</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>
