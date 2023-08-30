@@ -25,16 +25,16 @@
 <meta property="og:site_name" content="Cyria7&#39;s Space Station">
 <meta property="og:description" content="本文记录一些基础的neo4j使用方法，以及基于故宫陶瓷相关数据构建知识图谱的过程">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://gitee.com/Cyria7/picgo/raw/master/img/installsuc.jpg">
-<meta property="og:image" content="https://gitee.com/Cyria7/picgo/raw/master/img/kgexample.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Cyria7/picgo/main/img/installsuc-20230830142357652.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Cyria7/picgo/main/img/kgexample.jpg">
 <meta property="article:published_time" content="2023-03-14T13:00:21.000Z">
-<meta property="article:modified_time" content="2023-08-30T05:00:51.117Z">
+<meta property="article:modified_time" content="2023-08-30T06:25:21.997Z">
 <meta property="article:author" content="Cyria7">
 <meta property="article:tag" content="知识图谱">
 <meta property="article:tag" content="neo4j">
 <meta property="article:tag" content="python脚本">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/Cyria7/picgo/raw/master/img/installsuc.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Cyria7/picgo/main/img/installsuc-20230830142357652.jpg">
     
     
     <!--- Icon Part-->
@@ -386,8 +386,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-08-30 13:51</span>
-            <span class="mobile">2023-08-30 13:51</span>
+            <span class="desktop">2023-08-30 14:25:21</span>
+            <span class="mobile">2023-08-30 14:25:21</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -462,7 +462,7 @@
 </li>
 <li>
 <p>下载后解压 tar.gz 文件（尽量不要解压在下载文件夹里，最好选择一个全英文路径且没有空格的路径下），终端进入/neo4j-community-5.5.0/bin 目录下，执行<code>neo4j start</code>命令。如果成功执行则可以在 <a class="link" target="_blank" rel="noopener" href="http://localhost:7474/browser/">http://localhost:7474/browser/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 本地网站访问，显示的页面如下图则表示正常安装。</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://gitee.com/Cyria7/picgo/raw/master/img/installsuc.jpg" alt="installsuc"></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://raw.githubusercontent.com/Cyria7/picgo/main/img/installsuc-20230830142357652.jpg" alt="installsuc"></p>
 </li>
 <li>
 <p>*（以下步骤为可选步骤）*将 neo4j 命令添加到系统的环境变量中，在任意目录下都可以执行<code>neo4j start/stop</code>等命令。</p>
@@ -525,7 +525,7 @@
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;csv文件/data2.csv&#x27;</span>, newline=<span class="string">&#x27;&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> csvfile:</span><br><span class="line">    reader = csv.DictReader(csvfile)</span><br><span class="line">    i = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> reader:</span><br><span class="line">        relic_name = line[<span class="string">&#x27;文物名称&#x27;</span>]  <span class="comment"># 文物名称</span></span><br><span class="line">        keywords = line[<span class="string">&#x27;关键词&#x27;</span>].strip(<span class="string">&quot;[]&quot;</span>).replace(<span class="string">&quot;&#x27;&quot;</span>, <span class="string">&quot;&quot;</span>).split(<span class="string">&quot;, &quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> keywords[<span class="number">0</span>] != <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">            <span class="comment"># 创建&quot;具有&quot;关系</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="built_in">str</span>(i) + <span class="string">&#x27;: &#x27;</span>)</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">            <span class="built_in">print</span>(keywords)</span><br><span class="line">            <span class="keyword">with</span> driver.session() <span class="keyword">as</span> session:</span><br><span class="line">                <span class="keyword">for</span> keyword <span class="keyword">in</span> keywords:</span><br><span class="line">                    query = (</span><br><span class="line">                        <span class="string">f&quot;MATCH (a:Artifact &#123;&#123;name: &#x27;<span class="subst">&#123;relic_name&#125;</span>&#x27;&#125;&#125;), &quot;</span></span><br><span class="line">                        <span class="string">f&quot;(k:Keywords &#123;&#123;name: &#x27;<span class="subst">&#123;keyword&#125;</span>&#x27;&#125;&#125;) &quot;</span></span><br><span class="line">                        <span class="string">&quot;MERGE (a)-[:HAS_PROPERTY]-&gt;(k)&quot;</span></span><br><span class="line">                    )</span><br><span class="line">                    session.run(query)</span><br></pre></td></tr></table></figure></div>
 <h3 id="3-3-构建样例">3.3 构建样例</h3>
 <p>下图为 neo4j 中呈现出的部分样例，后续还需要对节点和关系进行优化和删改</p>
-<p><img lazyload src="/images/loading.svg" data-src="https://gitee.com/Cyria7/picgo/raw/master/img/kgexample.jpg" alt="kgexample"></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://raw.githubusercontent.com/Cyria7/picgo/main/img/kgexample.jpg" alt="kgexample"></p>
 
         </div>
 
@@ -540,7 +540,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2023-08-30 13:00:51
+                    :</strong> 2023-08-30 14:25:21
             </li>
         
         <li>
