@@ -3,7 +3,22 @@
   <entry>
     <title>Causal Analysis</title>
     <url>/2023/09/06/causal/</url>
-    <content><![CDATA[<p>因果结构学习：<br>
+    <content><![CDATA[<h2 id="文献阅读记录">文献阅读记录</h2>
+<h3 id="CausalVAE">CausalVAE</h3>
+<p>论文地址：<a class="link" href="https://arxiv.org/abs/2004.08697">https://arxiv.org/abs/2004.08697 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>代码地址：<a class="link" href="https://github.com/huawei-noah/trustworthyAI/tree/master/research/CausalVAE">https://github.com/huawei-noah/trustworthyAI/tree/master/research/CausalVAE <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<ol>
+<li><strong>论文主要内容</strong></li>
+</ol>
+<p>华为诺亚方舟实验室提出基于因果结构模型的解耦表征学习方法。该方法挑战了传统解耦任务的独立性假设，第一次采用因果结构假设物理世界的概念关系作为解耦表征的依据。并从理论上证明了采用该方法得到的解耦出的概念表征的可识别性。作者在两组合成数据及人脸数据CelebA上共测试了4组不同类型因果结构下的解耦效果，实验证明该方法不仅可以分辨出概念表征，并可以发现概念之间的因果结构。</p>
+<h3 id="评价指标">评价指标</h3>
+<h4 id="MIC-Maximal-Information-Coefficient">MIC(Maximal Information Coefficient)</h4>
+<p>MIC（最大信息系数），是用于衡量两个变量X和Y之间的关联程度，线性或非线性的强度，常用于机器学习的特征选择。</p>
+<p>详细计算方法参考：<a class="link" href="https://blog.csdn.net/FontThrone/article/details/85227239">https://blog.csdn.net/FontThrone/article/details/85227239 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="TIC-Total-Information-Coefficient">TIC(Total Information Coefficient)</h4>
+<p>MIC指标是通过不同的网格划分，计算不同划分状态下的某一个最大信息系数，而TIC则是将不同的划分的互信息系数相加得到</p>
+<h2 id="参考资料">参考资料</h2>
+<p>因果结构学习：<br>
 DAG-GNN: DAG structure learning with graph neural networks<br>
 <a class="link" href="https://github.com/fishmoon1234/DAG-GNN">https://github.com/fishmoon1234/DAG-GNN <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p>A Graph Autoencoder Approach to Causal Structure Learning<br>
@@ -318,6 +333,84 @@ CausalVAE: Structured Causal Disentanglement in Variational Autoencoder<br>
         <tag>大模型</tag>
         <tag>RLHF</tag>
         <tag>ChatGPT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文献阅读记录</title>
+    <url>/2023/11/22/readpapers/</url>
+    <content><![CDATA[<h2 id="1-大模型相关论文">1 大模型相关论文</h2>
+<h3 id="本人可能大模型研究方向研究整理：">本人可能大模型研究方向研究整理：</h3>
+<ul>
+<li>研究大模型在语音输入的情况下是否能分辨出语音语调区别对整句语言表达重点、表达含义区别的问题。</li>
+<li>研究大模型在parataxis（意合，中文）和hypotaxis（形合，英语）方向上的训练数据是否会导致模型效果的不同？</li>
+<li>关注大模型在小算力情况下的性能优化，即研究小算力可训练的大模型</li>
+</ul>
+<h3 id="📒GPT-4-Technical-Report">📒GPT-4 Technical Report</h3>
+<blockquote>
+<p>文献地址：<a class="link" href="https://cdn.openai.com/papers/gpt-4.pdf">https://cdn.openai.com/papers/gpt-4.pdf <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>发布时间：2023-03-27</p>
+<p>文献分类：大模型最新进展报告</p>
+</blockquote>
+<p><strong>简述：</strong></p>
+<p>GPT-4是一种大规模的多模态模型。GPT-4在各种专业和学术基准测试上表现出人类水平。GPT-4是一个基于Transformer的模型，通过预测文档中的下一个标识符(Token)的形式进行预训练。训练后的对齐(alignment)过程导致了模型回答的真实性和对指令的遵循程度有了提升。该项目的核心组件是开发基础架构和优化方法，这些方法在各种规模上都是可预测的。这使得我们能够准确地在部分方面预测GPT-4的性能，训练的模型是一个计算不超过 GPT-4计算量的1/000的模型。</p>
+<p><strong>读书笔记：</strong></p>
+<ul>
+<li>Predictable Scaling：能够在训练时，其表现能够提前预测。OpenAI通过训练1000x及更小的模型，通过这些模型的表现来预测GPT-4训练的最终的loss以及一些任务上的pass rate等指标。但也存在例外情况。相关工作（Auto-scaling Vision Transformers without Training, <a class="link" href="https://openreview.net/forum?id=H94a1_Pyr-6%EF%BC%89%E3%80%82">https://openreview.net/forum?id=H94a1_Pyr-6）。 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>本论文不牵涉到任何模型架构、硬件、训练计算、数据集构建、训练方法等详细信息。</li>
+<li>GPT-4在学术和专业考试上是否使用RLHF过程对实验结果的影响并不是很大（Table 1&amp;Figure 4）。</li>
+<li>GPT-4在传统大语言模型的benchmark上要大大优于现有的语言模型（Table 2）。</li>
+<li>在MMLU数据集的不同语言版本上，GPT-4在英语上的准确率达到了85%，在普通话上为80%，对于部分小语种如Latvian也能够有较高准确率，但存在部分语言准确率在75%以下。</li>
+<li>GPT-4可以接受视觉输入+文本输入，这样的输入和单纯的文字输入是同级的。</li>
+<li>GPT-4并不是完全准确的，也会产生“幻觉”类信息.</li>
+</ul>
+<p><strong>本文相关信息整理：</strong></p>
+<ul>
+<li><strong>MMLU基准测试</strong>（Massive Multitask Language Understanding，大规模多任务语言理解）：旨在通过仅在零样本和少样本设置下评估模型来衡量<a class="link" href="https://so.csdn.net/so/search?q=%E9%A2%84%E8%AE%AD%E7%BB%83&amp;spm=1001.2101.3001.7020">预训练 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>期间获得的知识。<br>
+大模型排行榜：<a class="link" href="https://paperswithcode.com/sota/multi-task-language-understanding-on-mmlu">https://paperswithcode.com/sota/multi-task-language-understanding-on-mmlu <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>
+专栏文章：<a class="link" href="https://blog.csdn.net/qq_41185868/article/details/131137555">https://blog.csdn.net/qq_41185868/article/details/131137555 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><strong>OpenAI Evals</strong>: <a class="link" href="https://github.com/openai/evals">https://github.com/openai/evals <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+<h3 id="📒Attention-Is-All-You-Need">📒Attention Is All You Need</h3>
+<blockquote>
+<p>文献地址：<a class="link" href="https://arxiv.org/abs/1706.03762">https://arxiv.org/abs/1706.03762 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>发布时间：2017-06-12</p>
+<p>文献分类：Transformer、经典文章</p>
+</blockquote>
+<p><strong>简述：</strong></p>
+<p>Transformer完全基于注意力机制，无需递归和卷积。Transformer是第一个完全基于注意力的序列转换模型，用多头自我注意力取代了编码器-解码器架构中最常用的递归层。在翻译任务中，Transformer的训练速度明显快于基于递归层或卷积层的架构。</p>
+<p>详细模型解释可以看“本文信息整理”中的知乎专栏。</p>
+<p><strong>模型架构：</strong></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://raw.githubusercontent.com/Cyria7/picgo/main/img/tfstructure.png" alt="tfstructure"></p>
+<p>其中Multi-Head Attention结构如下：</p>
+<p><img lazyload src="/images/loading.svg" data-src="https://raw.githubusercontent.com/Cyria7/picgo/main/img/tfattention.png" alt="tfattention"></p>
+<p><strong>本文信息整理：</strong></p>
+<ul>
+<li><strong>李宏毅讲transformer</strong>：<a class="link" href="https://www.youtube.com/watch?v=ugWDIIOHtPA&amp;list=PLJV_el3uVTsOK_ZK5L0Iv_EQoL1JefRL4&amp;index=60">https://www.youtube.com/watch?v=ugWDIIOHtPA&amp;list=PLJV_el3uVTsOK_ZK5L0Iv_EQoL1JefRL4&amp;index=60 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><strong>知乎专栏</strong>：<a class="link" href="https://zhuanlan.zhihu.com/p/338817680">https://zhuanlan.zhihu.com/p/338817680 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+<h3 id="📒Deep-Reinforcement-Learning-From-Human-Preferences">📒Deep Reinforcement Learning From Human Preferences</h3>
+<blockquote>
+<p>文献地址：<a class="link" href="https://arxiv.org/abs/1706.03741">https://arxiv.org/abs/1706.03741 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>发布时间：2017-06-12</p>
+<p>文献分类：大模型策略、RLHF</p>
+</blockquote>
+<p><strong>简述：</strong></p>
+<p>在本文之前取得较为成功，将强化学习扩展到大型问题的案例都是在明确指定回报函数的领域（如AlphaGo）。但现实中多数任务涉及的目标都很复杂、定义不清或难以明确，在复杂的强化学习系统中，人为指定汇报较为困难。本文探索了人类对每对轨迹片段偏好进行定义的目标，结果表明，尽管人类提供的反馈数目比智能体与环境交互总数的1%还要少，但可以有效的在不适用奖励函数的情况下解决复杂的RL问题。</p>
+<p><strong>读书笔记：</strong></p>
+<ul>
+<li>作者在这篇论文中只让人类去判断智能体轨迹的好坏，而无需反馈每个动作的回报函数，大大降低了人类的劳动强度和对人类反馈的要求，结果证明只需要少量的人类反馈，就能实现较好的效果。</li>
+<li>核心贡献是偏好学习和深度强化学习结合。</li>
+<li>选择轨迹片段给人类进行偏好标注。</li>
+<li>深度神经网络的参数更新过程。</li>
+</ul>
+<p><img lazyload src="/images/loading.svg" data-src="https://raw.githubusercontent.com/Cyria7/picgo/main/img/deeprl.png" alt="deeprl"></p>
+<p><strong>本文信息整理：</strong></p>
+<ul>
+<li>知乎学习笔记：<a class="link" href="https://www.zhihu.com/tardis/bd/art/625525607?source_id=1001">https://www.zhihu.com/tardis/bd/art/625525607?source_id=1001 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>文献阅读</tag>
       </tags>
   </entry>
 </search>
