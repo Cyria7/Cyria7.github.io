@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Cyria7/picgo/main/img/tfattention.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Cyria7/picgo/main/img/deeprl.png">
 <meta property="article:published_time" content="2023-11-22T05:16:02.000Z">
-<meta property="article:modified_time" content="2023-11-23T14:31:08.650Z">
+<meta property="article:modified_time" content="2023-11-30T13:23:30.488Z">
 <meta property="article:author" content="Cyria7">
 <meta property="article:tag" content="文献阅读">
 <meta name="twitter:card" content="summary">
@@ -381,8 +381,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-11-23 22:31:08</span>
-            <span class="mobile">2023-11-23 22:31:08</span>
+            <span class="desktop">2023-11-30 21:23:30</span>
+            <span class="mobile">2023-11-30 21:23:30</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -420,12 +420,12 @@
 
 
         <div class="article-content markdown-body">
-            <h2 id="1-大模型相关论文">1 大模型相关论文</h2>
+            <h2 id="1-大模型相关论文与专栏">1 大模型相关论文与专栏</h2>
 <h3 id="本人可能大模型研究方向研究整理：">本人可能大模型研究方向研究整理：</h3>
 <ul>
 <li>研究大模型在语音输入的情况下是否能分辨出语音语调区别对整句语言表达重点、表达含义区别的问题。</li>
 <li>研究大模型在parataxis（意合，中文）和hypotaxis（形合，英语）方向上的训练数据是否会导致模型效果的不同？</li>
-<li>关注大模型在小算力情况下的性能优化，即研究小算力可训练的大模型</li>
+<li>关注大模型在小算力情况下的性能优化，即研究小算力可训练的大模型。</li>
 </ul>
 <h3 id="📒GPT-4-Technical-Report">📒GPT-4 Technical Report</h3>
 <blockquote>
@@ -456,7 +456,7 @@
 <blockquote>
 <p>文献地址：<a class="link" target="_blank" rel="noopener" href="https://arxiv.org/abs/1706.03762">https://arxiv.org/abs/1706.03762 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p>发布时间：2017-06-12</p>
-<p>文献分类：Transformer、经典文章</p>
+<p>文献分类：Transformer、大模型基础</p>
 </blockquote>
 <p><strong>简述：</strong></p>
 <p>Transformer完全基于注意力机制，无需递归和卷积。Transformer是第一个完全基于注意力的序列转换模型，用多头自我注意力取代了编码器-解码器架构中最常用的递归层。在翻译任务中，Transformer的训练速度明显快于基于递归层或卷积层的架构。</p>
@@ -474,7 +474,7 @@
 <blockquote>
 <p>文献地址：<a class="link" target="_blank" rel="noopener" href="https://arxiv.org/abs/1706.03741">https://arxiv.org/abs/1706.03741 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p>发布时间：2017-06-12</p>
-<p>文献分类：大模型策略、RLHF</p>
+<p>文献分类：大模型基础、RLHF</p>
 </blockquote>
 <p><strong>简述：</strong></p>
 <p>在本文之前取得较为成功，将强化学习扩展到大型问题的案例都是在明确指定回报函数的领域（如AlphaGo）。但现实中多数任务涉及的目标都很复杂、定义不清或难以明确，在复杂的强化学习系统中，人为指定汇报较为困难。本文探索了人类对每对轨迹片段偏好进行定义的目标，结果表明，尽管人类提供的反馈数目比智能体与环境交互总数的1%还要少，但可以有效的在不适用奖励函数的情况下解决复杂的RL问题。</p>
@@ -490,6 +490,49 @@
 <ul>
 <li>知乎学习笔记：<a class="link" target="_blank" rel="noopener" href="https://www.zhihu.com/tardis/bd/art/625525607?source_id=1001">https://www.zhihu.com/tardis/bd/art/625525607?source_id=1001 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 </ul>
+<h3 id="📝专栏：GPT-4有情商！CAS-微软-提出-EmotionPrompt，可使其性能提升10-9-！">📝专栏：GPT-4有情商！CAS &amp;&amp; 微软 | 提出 EmotionPrompt，可使其性能提升10.9%！</h3>
+<blockquote>
+<p>专栏地址：<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/665655912">https://zhuanlan.zhihu.com/p/665655912 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>文献地址：<a class="link" target="_blank" rel="noopener" href="https://arxiv.org/pdf/2307.11760.pdf">https://arxiv.org/pdf/2307.11760.pdf <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>发布时间：2023-11-12</p>
+<p>专栏分类：情感增强</p>
+</blockquote>
+<p><strong>读书笔记：</strong></p>
+<ul>
+<li>情商是复杂的人类属性之一，人类的情商肯定会对人类的行为产生影响。在决策领域，有研究强调了情绪在引导注意力、学术界和竞技体育领域中的重要性。</li>
+<li>本文提出了EmotionalPrompt：将情感刺激融入到原始Prompt中。</li>
+<li>研究结果表明LLM具有情商，并且可以通过情绪刺激来增强，在表现、诚实度和责任指标方面平均能够提高10.9%</li>
+</ul>
+<h3 id="📒QLoRA-Efficient-Finetuning-of-Quantized-LLMs">📒QLoRA: Efficient Finetuning of Quantized LLMs</h3>
+<blockquote>
+<p>文献地址：<a class="link" target="_blank" rel="noopener" href="https://export.arxiv.org/pdf/2305.14314v1.pdf">https://export.arxiv.org/pdf/2305.14314v1.pdf <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>发布时间：2023-05-23</p>
+<p>文献分类：大模型微调、小内存微调</p>
+</blockquote>
+<p><strong>读书笔记：</strong></p>
+<ul>
+<li>QLORA是一种用高效微调方法，使得能在一个48GB的GPU上微调一个65B的参数模型，同时保留16位微调任务性能。</li>
+<li>在Vicuna基准上超过了之前公开发布的所有模型，在只需要24h微调且在一个GPU的情况下，达到了ChatGPT性能水平的99.3%。</li>
+<li>引入4位NormalFloat数据类型，是信息论中最适合正态分布权重的新数据类型；双倍量化，通过将量化常数来减少平均内存占用；页式优化器，用于管理内存峰值。</li>
+</ul>
+<p><strong>本文信息整理：</strong></p>
+<ul>
+<li>知乎专栏：<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/632229856">https://zhuanlan.zhihu.com/p/632229856 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+<h3 id="📒A-Survey-of-Large-Language-Models">📒A Survey of Large Language Models</h3>
+<blockquote>
+<p>文献地址：<a class="link" target="_blank" rel="noopener" href="https://arxiv.org/abs/2303.18223">https://arxiv.org/abs/2303.18223 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>发布时间：2023-09（持续更新）</p>
+<p>文献分类：大模型综述</p>
+</blockquote>
+<p><strong>读书笔记</strong>：</p>
+<ul>
+<li>GPT技术演进介绍。</li>
+<li>大语言模型资源整理：公开、非公开模型检查点或API；常用语料库；常用代码库。</li>
+<li>大语言模型的训练与微调。</li>
+<li>LLM能力测评任务的整理与汇总。</li>
+<li>大模型未来方向展望。</li>
+</ul>
 
         </div>
 
@@ -504,7 +547,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2023-11-23 22:31:08
+                    :</strong> 2023-11-30 21:23:30
             </li>
         
         <li>
@@ -613,7 +656,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">文献阅读记录</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3%E8%AE%BA%E6%96%87"><span class="nav-text">1 大模型相关论文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E4%BA%BA%E5%8F%AF%E8%83%BD%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E7%A0%94%E7%A9%B6%E6%95%B4%E7%90%86%EF%BC%9A"><span class="nav-text">本人可能大模型研究方向研究整理：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%92GPT-4-Technical-Report"><span class="nav-text">📒GPT-4 Technical Report</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%92Attention-Is-All-You-Need"><span class="nav-text">📒Attention Is All You Need</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%92Deep-Reinforcement-Learning-From-Human-Preferences"><span class="nav-text">📒Deep Reinforcement Learning From Human Preferences</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3%E8%AE%BA%E6%96%87%E4%B8%8E%E4%B8%93%E6%A0%8F"><span class="nav-text">1 大模型相关论文与专栏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E4%BA%BA%E5%8F%AF%E8%83%BD%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E7%A0%94%E7%A9%B6%E6%95%B4%E7%90%86%EF%BC%9A"><span class="nav-text">本人可能大模型研究方向研究整理：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%92GPT-4-Technical-Report"><span class="nav-text">📒GPT-4 Technical Report</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%92Attention-Is-All-You-Need"><span class="nav-text">📒Attention Is All You Need</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%92Deep-Reinforcement-Learning-From-Human-Preferences"><span class="nav-text">📒Deep Reinforcement Learning From Human Preferences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9D%E4%B8%93%E6%A0%8F%EF%BC%9AGPT-4%E6%9C%89%E6%83%85%E5%95%86%EF%BC%81CAS-%E5%BE%AE%E8%BD%AF-%E6%8F%90%E5%87%BA-EmotionPrompt%EF%BC%8C%E5%8F%AF%E4%BD%BF%E5%85%B6%E6%80%A7%E8%83%BD%E6%8F%90%E5%8D%8710-9-%EF%BC%81"><span class="nav-text">📝专栏：GPT-4有情商！CAS &amp;&amp; 微软 | 提出 EmotionPrompt，可使其性能提升10.9%！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%92QLoRA-Efficient-Finetuning-of-Quantized-LLMs"><span class="nav-text">📒QLoRA: Efficient Finetuning of Quantized LLMs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%92A-Survey-of-Large-Language-Models"><span class="nav-text">📒A Survey of Large Language Models</span></a></li></ol></li></ol>
 
     </div>
 </div>
