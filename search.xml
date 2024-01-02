@@ -336,9 +336,9 @@ CausalVAE: Structured Causal Disentanglement in Variational Autoencoder<br>
       </tags>
   </entry>
   <entry>
-    <title>文献阅读记录</title>
+    <title>大模型方向文献阅读记录</title>
     <url>/2023/11/22/readpapers/</url>
-    <content><![CDATA[<h2 id="1-大模型相关论文与专栏">1 大模型相关论文与专栏</h2>
+    <content><![CDATA[<h2 id="1-经典文献-综述">1 经典文献&amp;综述</h2>
 <h3 id="本人可能大模型研究方向研究整理：">本人可能大模型研究方向研究整理：</h3>
 <ul>
 <li>研究大模型在语音输入的情况下是否能分辨出语音语调区别对整句语言表达重点、表达含义区别的问题。</li>
@@ -381,6 +381,9 @@ CausalVAE: Structured Causal Disentanglement in Variational Autoencoder<br>
 <p>详细模型解释可以看“本文信息整理”中的知乎专栏。</p>
 <p><strong>模型架构：</strong></p>
 <p><img lazyload src="/images/loading.svg" data-src="https://raw.githubusercontent.com/Cyria7/picgo/main/img/tfstructure.png" alt="tfstructure"></p>
+<p>Atention计算详解：</p>
+<p><img lazyload src="/images/loading.svg" data-src="https://raw.githubusercontent.com/Cyria7/picgo/main/img/attentioncal.png" alt="attentioncal"></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://raw.githubusercontent.com/Cyria7/picgo/main/img/tflhy.png" alt="tflhy"></p>
 <p>其中Multi-Head Attention结构如下：</p>
 <p><img lazyload src="/images/loading.svg" data-src="https://raw.githubusercontent.com/Cyria7/picgo/main/img/tfattention.png" alt="tfattention"></p>
 <p><strong>本文信息整理：</strong></p>
@@ -408,35 +411,6 @@ CausalVAE: Structured Causal Disentanglement in Variational Autoencoder<br>
 <ul>
 <li>知乎学习笔记：<a class="link" href="https://www.zhihu.com/tardis/bd/art/625525607?source_id=1001">https://www.zhihu.com/tardis/bd/art/625525607?source_id=1001 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 </ul>
-<h3 id="📝专栏：GPT-4有情商！CAS-微软-提出-EmotionPrompt，可使其性能提升10-9-！">📝专栏：GPT-4有情商！CAS &amp;&amp; 微软 | 提出 EmotionPrompt，可使其性能提升10.9%！</h3>
-<blockquote>
-<p>专栏地址：<a class="link" href="https://zhuanlan.zhihu.com/p/665655912">https://zhuanlan.zhihu.com/p/665655912 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>文献地址：<a class="link" href="https://arxiv.org/pdf/2307.11760.pdf">https://arxiv.org/pdf/2307.11760.pdf <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>发布时间：2023-11-12</p>
-<p>专栏分类：情感增强</p>
-</blockquote>
-<p><strong>读书笔记：</strong></p>
-<ul>
-<li>情商是复杂的人类属性之一，人类的情商肯定会对人类的行为产生影响。在决策领域，有研究强调了情绪在引导注意力、学术界和竞技体育领域中的重要性。</li>
-<li>本文提出了EmotionalPrompt：将情感刺激融入到原始Prompt中。</li>
-<li>研究结果表明LLM具有情商，并且可以通过情绪刺激来增强，在表现、诚实度和责任指标方面平均能够提高10.9%</li>
-</ul>
-<h3 id="📒QLoRA-Efficient-Finetuning-of-Quantized-LLMs">📒QLoRA: Efficient Finetuning of Quantized LLMs</h3>
-<blockquote>
-<p>文献地址：<a class="link" href="https://export.arxiv.org/pdf/2305.14314v1.pdf">https://export.arxiv.org/pdf/2305.14314v1.pdf <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>发布时间：2023-05-23</p>
-<p>文献分类：大模型微调、小内存微调</p>
-</blockquote>
-<p><strong>读书笔记：</strong></p>
-<ul>
-<li>QLORA是一种用高效微调方法，使得能在一个48GB的GPU上微调一个65B的参数模型，同时保留16位微调任务性能。</li>
-<li>在Vicuna基准上超过了之前公开发布的所有模型，在只需要24h微调且在一个GPU的情况下，达到了ChatGPT性能水平的99.3%。</li>
-<li>引入4位NormalFloat数据类型，是信息论中最适合正态分布权重的新数据类型；双倍量化，通过将量化常数来减少平均内存占用；页式优化器，用于管理内存峰值。</li>
-</ul>
-<p><strong>本文信息整理：</strong></p>
-<ul>
-<li>知乎专栏：<a class="link" href="https://zhuanlan.zhihu.com/p/632229856">https://zhuanlan.zhihu.com/p/632229856 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-</ul>
 <h3 id="📒A-Survey-of-Large-Language-Models">📒A Survey of Large Language Models</h3>
 <blockquote>
 <p>文献地址：<a class="link" href="https://arxiv.org/abs/2303.18223">https://arxiv.org/abs/2303.18223 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
@@ -451,9 +425,102 @@ CausalVAE: Structured Causal Disentanglement in Variational Autoencoder<br>
 <li>LLM能力测评任务的整理与汇总。</li>
 <li>大模型未来方向展望。</li>
 </ul>
+<h2 id="2-大模型调优">2 大模型调优</h2>
+<h3 id="📒GPT-Understands-Too-P-Tuning-v1">📒GPT Understands, Too(P-Tuning v1)</h3>
+<blockquote>
+<p>文献地址：<a class="link" href="https://arxiv.org/abs/2103.10385">https://arxiv.org/abs/2103.10385 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>发布时间：2021-03-18</p>
+<p>文献分类：大模型调优</p>
+<p>相关代码：<a class="link" href="https://github.com/THUDM/P-tuning">https://github.com/THUDM/P-tuning <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<p>读书笔记：</p>
+<ul>
+<li>P-Tuning是一种连续可微的virtual token，即将Prompt转化为可以学习的embedding层。</li>
+<li>使用LSTM+MLP来编码这种virtua token，再输入到模型。</li>
+<li>在LAMA和SuperGLUE两个数据集上取得了非常好的效果。</li>
+</ul>
+<h3 id="📒QLoRA-Efficient-Finetuning-of-Quantized-LLMs">📒QLoRA: Efficient Finetuning of Quantized LLMs</h3>
+<blockquote>
+<p>文献地址：<a class="link" href="https://export.arxiv.org/pdf/2305.14314v1.pdf">https://export.arxiv.org/pdf/2305.14314v1.pdf <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>发布时间：2023-05-23</p>
+<p>文献分类：大模型微调、小内存方法</p>
+</blockquote>
+<p><strong>读书笔记：</strong></p>
+<ul>
+<li>QLORA是一种用高效微调方法，使得能在一个48GB的GPU上微调一个65B的参数模型，同时保留16位微调任务性能。</li>
+<li>在Vicuna基准上超过了之前公开发布的所有模型，在只需要24h微调且在一个GPU的情况下，达到了ChatGPT性能水平的99.3%。</li>
+<li>引入4位NormalFloat数据类型，是信息论中最适合正态分布权重的新数据类型；双倍量化，通过将量化常数来减少平均内存占用；页式优化器，用于管理内存峰值。</li>
+</ul>
+<p><strong>本文信息整理：</strong></p>
+<ul>
+<li>知乎专栏：<a class="link" href="https://zhuanlan.zhihu.com/p/632229856">https://zhuanlan.zhihu.com/p/632229856 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+<h3 id="📒LORA-LOW-RANK-ADAPTATION-OF-LARGE-LANGUAGE-MODELS">📒LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</h3>
+<blockquote>
+<p>文献地址：<a class="link" href="https://arxiv.org/abs/2106.09685">https://arxiv.org/abs/2106.09685 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>发布时间：2021-10</p>
+<p>文献分类：大模型微调、小内存方法</p>
+</blockquote>
+<p><strong>读书笔记：</strong></p>
+<ul>
+<li>该方法的核心思想是通过低秩分解来模拟参数的该变量，从而以极小的参数量来实现大模型的间接训练。</li>
+<li></li>
+</ul>
+<h2 id="3-最新前沿进展">3 最新前沿进展</h2>
+<h3 id="📒Self-Supervised-Hypergraph-Transformer-for-Recommender-Systems">📒Self-Supervised Hypergraph Transformer for Recommender Systems</h3>
+<blockquote>
+<p>文献地址：<a class="link" href="https://arxiv.org/abs/2207.14338">https://arxiv.org/abs/2207.14338 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>发布会刊：KDD2022</p>
+<p>文献分类：Transformer新架构</p>
+</blockquote>
+<p><strong>文章摘要：</strong></p>
+<p>文章《Self-Supervised Hypergraph Transformer for Recommender Systems》的摘要部分指出，图神经网络（GNN）在以用户-物品互动图为基础的协同过滤中显示出了前景。然而，现有的推荐模型大多依赖于高质量的训练数据，而在许多实际推荐场景中，<strong>用户行为数据通常嘈杂且分布不均</strong>。针对这一问题，本文提出了一种新颖的自监督超图变换器框架（SHT），该框架通过探索全局协作关系以显式方式增强用户表示。具体来说，首先通过超图变换器网络使图神经协同过滤范式能够维护用户和物品之间的全局协作效应。通过提炼的全局上下文，提出了一种跨视图生成式自监督学习组件，用于用户-物品交互图上的数据增强，以增强推荐系统的鲁棒性。广泛的实验表明，SHT在各种最新基准测试中的性能显著提高。进一步的消融实验表明，我们的SHT推荐框架在减轻数据稀疏和噪声问题方面具有优越的表现能力。</p>
+<p><strong>读书笔记：</strong></p>
+<ul>
+<li>本文提出了一种自监督超图变换器架构（SHT），该框架通过探索全局协作关系以显示方式增强用户表示。</li>
+</ul>
+<p>本文信息整理：</p>
+<ul>
+<li>topology-aware Transformer</li>
+<li>知乎专栏：<a class="link" href="https://zhuanlan.zhihu.com/p/587800505">https://zhuanlan.zhihu.com/p/587800505 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>搜狐文章：<a class="link" href="https://www.sohu.com/a/585891595_121119001">https://www.sohu.com/a/585891595_121119001 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+<h3 id="📝专栏：GPT-4有情商！CAS-微软-提出-EmotionPrompt，可使其性能提升10-9-！">📝专栏：GPT-4有情商！CAS &amp;&amp; 微软 | 提出 EmotionPrompt，可使其性能提升10.9%！</h3>
+<blockquote>
+<p>专栏地址：<a class="link" href="https://zhuanlan.zhihu.com/p/665655912">https://zhuanlan.zhihu.com/p/665655912 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>文献地址：<a class="link" href="https://arxiv.org/pdf/2307.11760.pdf">https://arxiv.org/pdf/2307.11760.pdf <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>发布时间：2023-11-12</p>
+<p>专栏分类：情感增强</p>
+</blockquote>
+<p><strong>读书笔记：</strong></p>
+<ul>
+<li>情商是复杂的人类属性之一，人类的情商肯定会对人类的行为产生影响。在决策领域，有研究强调了情绪在引导注意力、学术界和竞技体育领域中的重要性。</li>
+<li>本文提出了EmotionalPrompt：将情感刺激融入到原始Prompt中。</li>
+<li>研究结果表明LLM具有情商，并且可以通过情绪刺激来增强，在表现、诚实度和责任指标方面平均能够提高10.9%</li>
+</ul>
 ]]></content>
       <tags>
         <tag>文献阅读</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大模型调优总结</title>
+    <url>/2023/12/31/llmsPeft/</url>
+    <content><![CDATA[<h2 id="1-调优方法总结">1 调优方法总结</h2>
+<h3 id="📒P-tuning-v1">📒P-tuning(v1)</h3>
+<h2 id="2-测试集">2 测试集</h2>
+<h3 id="2-1-NLU-benchmark">2.1 NLU benchmark</h3>
+<ul>
+<li>LAMA: <a class="link" href="https://github.com/facebookresearch/LAMA">https://github.com/facebookresearch/LAMA <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>SuperGLUE: <a class="link" href="https://super.gluebenchmark.com/">https://super.gluebenchmark.com/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>大模型</category>
+      </categories>
+      <tags>
+        <tag>大模型</tag>
+        <tag>大模型调优</tag>
       </tags>
   </entry>
 </search>
